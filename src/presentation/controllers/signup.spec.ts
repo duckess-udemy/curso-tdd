@@ -88,13 +88,31 @@ describe("SignUp Controller", () => {
         name: "any-name",
         email: "invalid-email",
         password: "any-password",
-        passwordConfirmation: "any-passwordConfirmation",
+        passwordConfirmation: "any-password",
       },
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
     expect(httpResponse.body).toEqual(new InvalidParamError("email"));
   });
+
+  test("should return 400 if password confirmation fails", () => {
+    const { sut } = makeSut(); // sut = system under test
+    const httpRequest = {
+      body: {
+        name: "any-name",
+        email: "any-email",
+        password: "any-password",
+        passwordConfirmation: "invalid-password",
+      },
+    };
+    const httpResponse = sut.handle(httpRequest);
+    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.body).toEqual(
+      new InvalidParamError("passwordConfirmation")
+    );
+  });
+
   test("should call EmailValidator with correct email", () => {
     const { sut, emailValidatorStub } = makeSut(); // sut = system under test
     const isValidSpy = jest.spyOn(emailValidatorStub, "isValid");
@@ -103,7 +121,7 @@ describe("SignUp Controller", () => {
         name: "any-name",
         email: "any-email@mail.com",
         password: "any-password",
-        passwordConfirmation: "any-passwordConfirmation",
+        passwordConfirmation: "any-password",
       },
     };
     sut.handle(httpRequest);
@@ -122,7 +140,7 @@ describe("SignUp Controller", () => {
         name: "any-name",
         email: "any-email",
         password: "any-password",
-        passwordConfirmation: "any-passwordConfirmation",
+        passwordConfirmation: "any-password",
       },
     };
     const httpResponse = sut.handle(httpRequest);
