@@ -3,7 +3,7 @@ import {
   MissingParamError,
   InvalidParamError,
   ServerError,
-} from "../../errors";
+} from "@presentation/errors";
 import {
   EmailValidator,
   AccountModel,

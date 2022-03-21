@@ -5,6 +5,13 @@
     "target": "es2021",
     "esModuleInterop": true,
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@data/*": ["src/data/*"],
+      "@domain/*": ["src/domain/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@src/*": ["src/*"]
+    },
     "strictNullChecks": true
   }
 }
