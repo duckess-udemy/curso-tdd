@@ -96,4 +96,19 @@ describe("DBAddAccount Usecase", () => {
     const promise = sut.add(accountData);
     await expect(promise).rejects.toThrow();
   });
+  test("should return an AccountModel on success", async () => {
+    const { sut } = makeSut();
+    const accountData = {
+      name: "valid-name",
+      email: "valid-email",
+      password: "valid-password",
+    };
+    const result = await sut.add(accountData);
+    expect(result).toEqual({
+      id: "valid-id",
+      name: "valid-name",
+      email: "valid-email",
+      password: "hashed-password",
+    });
+  });
 });
