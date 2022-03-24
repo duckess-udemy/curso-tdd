@@ -19,7 +19,7 @@ const SRC_PATH = "<rootDir>/src";
 module.exports = {
   roots: [SRC_PATH],
   collectCoverage: true,
-  collectCoverageFrom: [`${SRC_PATH}/**/*.ts`],
+  // collectCoverageFrom: [`${SRC_PATH}/**/*.ts`],
   moduleNameMapper: makeModuleNameMapper(TS_CONFIG_PATH),
   coverageDirectory: "coverage",
   testEnvironment: "node",
