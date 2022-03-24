@@ -11,6 +11,7 @@
       "@domain/*": ["src/domain/*"],
       "@presentation/*": ["src/presentation/*"],
       "@utils/*": ["src/utils/*"],
+      "@infra/*": ["src/infra/*"],
       "@src/*": ["src/*"]
     },
     "strictNullChecks": true
