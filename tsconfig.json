@@ -7,12 +7,27 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@data/*": ["src/data/*"],
-      "@domain/*": ["src/domain/*"],
-      "@presentation/*": ["src/presentation/*"],
-      "@utils/*": ["src/utils/*"],
-      "@infra/*": ["src/infra/*"],
-      "@src/*": ["src/*"]
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@domain/*": [
+        "src/domain/*"
+      ],
+      "@presentation/*": [
+        "src/presentation/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@infra/*": [
+        "src/infra/*"
+      ],
+      "@main/*": [
+        "src/main/*"
+      ],
+      "@src/*": [
+        "src/*"
+      ]
     },
     "strictNullChecks": true
   }
