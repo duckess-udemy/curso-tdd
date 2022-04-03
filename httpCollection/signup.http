@@ -1,0 +1,12 @@
+@signUpUrl={{baseUrl}}/signup
+
+
+POST {{signUpUrl}}
+Content-Type: application/json
+
+{
+    "name": "Mateus",
+    "email": "email",
+    "password": "123",
+    "passwordConfirmation": "123"
+}
