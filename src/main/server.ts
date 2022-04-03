@@ -1,6 +1,5 @@
 import env from "./config/env";
-import { mongoHelper } from "../infra/db/mongodb/helpers/mongo-helper";
-// import { mongoHelper } from "@infra/db/mongodb/helpers/mongo-helper"; // IDK WHY THIS DIDNT WORK???
+import { mongoHelper } from "@infra/db/mongodb/helpers/mongo-helper";
 
 mongoHelper
   .connect(env.mongoUrl)
