@@ -1,10 +1,11 @@
 import request from "supertest";
 import { mongoHelper } from "@infra/db/mongodb/helpers/mongo-helper";
 import { app } from "../config/app";
+import env from "@main/config/env";
 
 describe("SignUp Routes", () => {
   beforeAll(async () => {
-    await mongoHelper.connect();
+    await mongoHelper.connect(env.mongoUrl);
   });
   beforeEach(async () => {
     const accountCollection = await mongoHelper.getCollection("accounts");

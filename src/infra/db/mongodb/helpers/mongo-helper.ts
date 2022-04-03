@@ -1,8 +1,8 @@
 import { Collection, MongoClient, InsertOneResult, Document } from "mongodb";
 class MongoHelper {
   client: MongoClient;
-  async connect(): Promise<void> {
-    this.client = await MongoClient.connect(String(process.env.MONGO_URL));
+  async connect(mongoUrl: string): Promise<void> {
+    this.client = await MongoClient.connect(mongoUrl);
   }
 
   async disconnect(): Promise<void> {
