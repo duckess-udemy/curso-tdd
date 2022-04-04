@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "sucrase-node ./src/main/server.ts",
-    "build": "tsc -p ./tsconfig.json",
+    "build": "rm -rf ./dist && tsc -p ./tsconfig.json && node ./transpile.js",
     "start:prod": "node ./dist/src/main/server.js",
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test": "rm -rf ./dist && jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
