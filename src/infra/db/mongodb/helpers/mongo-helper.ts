@@ -17,6 +17,7 @@ class MongoHelper {
     return {
       ...data,
       id: String(result.insertedId),
+      _id: undefined,
     };
   }
 }
